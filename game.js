@@ -11,7 +11,9 @@ var y = Math.floor(Math.random() * 100 + 1);
   
    if(number == y) 
    {     
-    alert("correct")
+    function myFunction() {
+        document.getElementById("guess").innerHTML = "Paragraph changed!";
+      }
 
         
    } 
