@@ -66,4 +66,34 @@ function newGame() {
    } 
 } 
 
- 
+document.getElementById("restart").onclick = function restart(){
+  document.getElementById("restart").style.visibility = "hidden";
+  var number = document.getElementById("guess").value;
+
+  if(number == y) 
+  {     
+   
+   guess++
+   document.getElementById("correct").innerHTML = "Congratulations! It took you " + guess + " attempts to guess the number correctly.";
+   document.getElementById("score").innerHTML = guess;
+   document.getElementById("restart").style.visibility = "visible";
+   newGame();
+   hide();
+   
+   
+
+  } 
+  else if(number > y) 
+  {   
+      guess++; 
+      document.getElementById("correct").innerHTML = "Incorrect, the correct number is smaller than " + number ;
+      document.getElementById("score").innerHTML = guess;
+  } 
+  else
+  {    
+      guess++; 
+      document.getElementById("correct").innerHTML = "Incorrect, the correct number is bigger than " + number ;
+      document.getElementById("score").innerHTML = guess;
+
+  } 
+}
