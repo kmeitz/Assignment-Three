@@ -1,10 +1,13 @@
+console.log("Starting game.js code")
 document.getElementById("restart").style.visibility = "hidden";
-var y = Math.floor(Math.random() * 100 + 1);
-var guess = 0;
+document.getElementById("spinner").style.visibility = "hidden";
+let y = Math.floor(Math.random() * 100 + 1);
+console.log(`Anwser is ${y}`);
+let guess = 0;
 
 ///
 function hide() {
-    var x = document.getElementById("guess");
+    let x = document.getElementById("guess");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
@@ -18,6 +21,7 @@ function hide() {
     }
 }
 
+spinner = getElementById("spinner");
 
 
 function newGame() {
@@ -32,12 +36,12 @@ function newGame() {
 
 
 document.getElementById("button").onclick = function game() {
-
+    console.log("Button clicked")
 
 
     document.getElementById("restart").style.visibility = "hidden";
 
-    var number = document.getElementById("guess").value;
+    let number = document.getElementById("guess").value;
 
     if (number == y) {
 
@@ -64,6 +68,11 @@ document.getElementById("button").onclick = function game() {
         document.getElementById("score").innerHTML = guess;
 
     }
+
+
+    setTimeout(() => {
+        spinner.style.display = "inline";
+    }, 3000)
 }
 
 
@@ -75,8 +84,9 @@ document.getElementById("restart").onclick = function restart() {
 
     document.getElementById("score").innerHTML = "0";
     document.getElementById("correct").innerHTML = "";
-    var y = Math.floor(Math.random() * 100 + 1);
-    var guess = 0;
+    let y = Math.floor(Math.random() * 100 + 1);
+    let guess = 0;
     game();
 }
-var y = Math.floor(Math.random() * 100 + 1);
+let y = Math.floor(Math.random() * 100 + 1);
+console.log("End of game.js code");
