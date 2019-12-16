@@ -1,69 +1,82 @@
-document.getElementById("restart").style.visibility = "hidden";
-var y = Math.floor(Math.random() * 100 + 1); 
-var guess = 0; 
+console.log("Beginning game.js code");
+var y = Math.floor(Math.random() * 10) + 1;
+let guess = 0;
+const spinner = $("#spinner");
+const score = $("#score");
+const button = $("#button");
+const guessT = $("#guess");
+const correct = $("#correct");
+const restart = $("#restart");
+let number = guessT.val();
+spinner.hide();
 
 
-function hide() {
-    var x = document.getElementById("guess");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-    var w = document.getElementById("button");
-    if (w.style.display === "none") {
-      w.style.display = "block";
-    } else {
-      w.style.display = "none";
-    }
-  }
+function correctNum() {
+    guess++
+            correct.html( "Congratulations! It took you " + guess + " attempts to guess the number correctly.");
+            score.html(guess);
+            restart.show();
+            guessT.hide();
+            guess = 0;
+            newGame();
+            button.show(); 
+}
+
+function numTooBig() {
+    guess++;
+            correct.html("Incorrect, the correct number is smaller than " + number);
+            score.html(guess);
+            button.show(); 
+}
+ 
+function numTooSmall() {
+            guess++;
+            correct.html("Incorrect, the correct number is bigger than " + number);
+            score.html(guess);
+            button.show(); 
+}
+
+button.click(function game() {
+
+    number =     guessT.val();
+    spinner.show();
+    button.hide();
+    setTimeout(() => {
+        spinner.hide();
+        
+        3
+
+
+
+        
+
+        if (number == y) {
+            correctNum();
+           
+        } else if (number > y) {
+            numTooBig();
+            
+        } else {
+            numTooSmall();
+          
+
+        }
+
+    }, 3000)
 
   
+});
 
-function newGame() {
-	secretNumber = Math.floor(Math.random() * 100) + 1;
-    numberOfGuesses = 0;
-    document.getElementById("score").innerHTML = ""
-
-
-}
-	
-    
+restart.click(function restart() {
+   button.show();
+    guessT.show();
 
 
-   document.getElementById("button").onclick = function game(){
-    
-    
-    
-
-    var number = document.getElementById("guess").value;
-
-   if(number == y) 
-   {     
-    
-    guess++
-    document.getElementById("correct").innerHTML = "Congratulations! It took you " + guess + " attempts to guess the number correctly.";
-    document.getElementById("score").innerHTML = guess;
-    document.getElementById("restart").style.visibility = "visible";
-    newGame();
-    hide();
-    
-    
-
-   } 
-   else if(number > y) 
-   {   
-       guess++; 
-       document.getElementById("correct").innerHTML = "Incorrect, the correct number is smaller than " + number ;
-       document.getElementById("score").innerHTML = guess;
-   } 
-   else
-   {    
-       guess++; 
-       document.getElementById("correct").innerHTML = "Incorrect, the correct number is bigger than " + number ;
-       document.getElementById("score").innerHTML = guess;
-
-   } 
-} 
-
- 
+    score.html("0");
+    correct.html("");
+    y = Math.floor(Math.random() * 10 + 1);
+    guess = 0;
+    game();
+    });
+var y = Math.floor(Math.random() * 10 + 1);
+console.log("Finished game.js code");

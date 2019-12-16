@@ -1,65 +1,72 @@
-<html >
+<html>
+
+<body>
+
+    <head>
+        <title>Guess # Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+
     <body>
 
-            <head>
-                    <title>Guess # Game</title>
-                    <meta charset="utf-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                  </head>
-                  <body>
+        <div class="jumbotron text-center">
+            <h1 class="bg-info text-white">Guess the Number Game!!!</h1>
+            <p class="bg-danger text-white">Guess a number between 1-100. We will tell you higher or lower based on the number you enter, until you guess the right number.</p>
+            <p class="bg-warning text-white"> The lower the score the better! </p>
 
-                  <div class="jumbotron text-center">
-                    <h1 class="bg-info text-white">Guess the Number Game!!!</h1>
-                    <p class="bg-danger text-white">Guess a number between 1-100. We will tell you higher or lower based on the number you enter, until you guess the right number.</p> 
-                    <p class="bg-warning text-white"> The lower the score the better! </p>
-                    
-                  </div>
+        </div>
 
 
 
 
 
-        <div class="form"> 
-                <label for="guess"> Guess: </label> 
-                <input type = "text" id = "guess" class = "guess"> 
-                <input type = "button" value = "Click to Guess" onclick = "function game()"
-                       class = "guess" id = "button"> 
-                <p id = "correct"></p>
-                <p class = text id = > Total Guesses: </p>
-                <p id = "score" ></p>
-            </div>            
-
-            <title>Spinner</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        
-            
-            <input type = "button" id = "restart" value = "Restart" onclick = "function game()">
-        
-          </head>
+        <div class="form">
+            <label for="guess"> Guess: </label>
+            <input type="text" id="guess" class="guess">
+            <input type="button" value="Click to Guess" onclick="function game()" class="guess" id="button">
+            <p id="correct"></p>
+            <p class=t ext id=> Total Guesses: </p>
+            <p id="score"></p>
+            .
+        </div>
+        <div>
 
 
 
 
-          <body>
-          
-          
-                                                  
-            <div class="spinner-border" onclick></div>
-          </div>
-            
-
-            <script src = "./game.js"></script>
+            <button id="restart" class="btn btn-lg btn-info" onclick="restart()">Restart
+            </button>
 
 
 
+            <div>
+                <button class="btn btn-primary" id="spinner" onclick="function click()" enabled>
+                <span class="spinner-grow spinner-grow-sm"></span>
+                Checking..
+             <div></div>
 
-    </body>
-</html>  
+            </head>
+
+
+
+
+            <body>
+
+
+
+
+
+
+                <script src="./game.js"></script>
+
+
+
+
+            </body>
+
+</html>
